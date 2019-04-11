@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700');
+@import "./mixins.sass";
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  font-family: 'Ubuntu Mono', monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid black;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1152px;
+  @include until($tablet) {
+    width: 100%;
+  }
+}
+
+.wrapper > * {
+  padding: 32px;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+.page-header {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 64px;
+  justify-content: space-between;
+  font-size: 16px;
+  @include until($tablet) {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0em;
+  }
+
+	#canvas-wrapper {
+		border-radius: 999px;
+		overflow: hidden;
+		width: 48px;
+		height: 48px;
+		margin-top: -4px;
+	}
+
+  .introduction {
+    margin-left: 18px;
+    margin-top: -0.25em;
+		br {
+      @include until($tablet) {
+        display: none;
+      }
+		}
+  }
+
+  .left {
+    display: flex;
+		#canvas-wrapper {
+			flex-shrink: 0
+		}
+  }
+
+  .right {
+    margin-top: -0.25em;
+    @include until($tablet) {
+      margin-left: 66px;
+    }
+  }
+}
+
+.page-main {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+  .thmb {
+    margin-bottom: 80px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    //@include until($desktop) {
+      //margin-bottom: 80px;
+    //}
+
+    div{margin-top: 10px}
+
+
+    h2 {
+      margin: 16px 0 10px 0;
+      font-weight: normal;
+      box-shadow: inset 0 -1px 0 0 #fff, inset 0 -2px 0 0 #000;
+      display: inline;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #dfdfdf;
+      margin-bottom: 16px;
+    }
+
+    &.thmb-small {
+      width: 31%;
+      @include until($desktop) {
+        width: 48%;
+      }
+      @include until($tablet) {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 24px;
+      }
+    }
+
+    &.thmb-large {
+      width: 65%;
+      @include until($desktop) {
+        width: 100%;
+      }
+      @include until($tablet) {
+        width: 100%;
+      }
+
+      h2 {
+        font-size: 32px;
+        @include until($tablet) {
+          font-size: 24px;
+        }
+      }
+    }
+    &:hover{
+      opacity: 0.7;
+        //transform: scale(1.05);
+        transform-origin: 50% 50%;
+    }
+  }
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+
+.page-footer {
+  display: flex;
+
+  &.title {
+
+  }
+}
