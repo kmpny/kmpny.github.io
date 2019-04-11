@@ -22,7 +22,6 @@ ready(function () {
         p.draw = () => {
             p.blendMode(p.NORMAL)
             p.background('white')
-            p.blendMode(p.MULTIPLY)
             let time = p.frameCount / 200,
                 pos = p.mouseX / 100,
                 timeSplit = 0,
@@ -30,9 +29,12 @@ ready(function () {
                 yK = p.height * p.noise(time, pos, 100) * 1.5,
                 v1 = p5.Vector.fromAngle(p.radians(45), p.width * 2),
                 v2 = p5.Vector.fromAngle(p.radians(-45), p.width * 2)
+						p.push()
+						p.blendMode(p.MULTIPLY)
             p.drawK(time, pos, 'cyan', yK, v1, v2)
             p.drawK(time + timeSplit, pos + posSplit, 'yellow', yK, v1, v2)
             p.drawK(time + 2 * timeSplit, pos + 2 * posSplit, 'magenta', yK, v1, v2)
+						p.pop()
         }
         p.drawK = (time, pos, color, yK, v1, v2) => {
             p.fill(color)
