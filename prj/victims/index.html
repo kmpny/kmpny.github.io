@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Жертвы преднамеренных убийств</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta property="og:url"                content="https://kmpny.github.io/prj/victims/" />
+    <meta property="og:type"               content="website" />
+    <meta property="og:title"              content="Жертвы преднамеренных убийств" />
+    <meta property="og:description"        content="Визуализация данных на плиточной карте мира." />
+    <meta property="og:image"              content="https://kmpny.github.io/dataviz/victims/preview.png" />
+
+</head>
+<body>
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+
+<div class="wrapper">
+
+    <div id="tooltip" class="hidden">
+        <p><span class="name"></span>
+            <span id="value"></span>
+            <span class="year"></span></p>
+    </div>
+
+    <h1>Жертвы преднамеренных <br>убийств</h1>
+
+    <div id="chart">
+    </div>
+
+    <footer>
+        <div class="calcul">
+            <svg width="70" height="16" viewBox="0 0 70 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="16" height="16" rx="3" fill="#474B4E"/>
+                <rect x="18" width="16" height="16" rx="3" fill="#474B4E"/>
+                <rect x="36" width="16" height="16" rx="3" fill="#474B4E"/>
+                <rect x="54" width="16" height="16" rx="3" fill="#FF5555"/>
+                <path d="M4.01465 7.0532H6.99765V3.7472H9.01165V7.0532H11.9946V8.9722H9.01165V12.2782H6.99765V8.9722H4.01465V7.0532Z"
+                      fill="white"/>
+                <path d="M22.0221 7.0532H30.0021V8.9722H22.0221V7.0532Z" fill="white"/>
+                <path d="M45.3169 4.5642C45.3169 5.0202 45.1839 5.36854 44.9179 5.6092C44.6519 5.8372 44.3479 5.9512 44.0059 5.9512C43.6386 5.9512 43.3219 5.8372 43.0559 5.6092C42.7899 5.36854 42.6569 5.0202 42.6569 4.5642C42.6569 4.1082 42.7899 3.75987 43.0559 3.5192C43.3219 3.27854 43.6386 3.1582 44.0059 3.1582C44.3479 3.1582 44.6519 3.27854 44.9179 3.5192C45.1839 3.75987 45.3169 4.1082 45.3169 4.5642ZM45.3169 11.4992C45.3169 11.9425 45.1839 12.2909 44.9179 12.5442C44.6519 12.7849 44.3479 12.9052 44.0059 12.9052C43.6386 12.9052 43.3219 12.7849 43.0559 12.5442C42.7899 12.2909 42.6569 11.9425 42.6569 11.4992C42.6569 11.0432 42.7899 10.6949 43.0559 10.4542C43.3219 10.2009 43.6386 10.0742 44.0059 10.0742C44.3479 10.0742 44.6519 10.2009 44.9179 10.4542C45.1839 10.6949 45.3169 11.0432 45.3169 11.4992ZM39.9779 7.0532H47.9579V8.9722H39.9779V7.0532Z"
+                      fill="white"/>
+                <path d="M58.0279 5.1912H66.0079V7.1292H58.0279V5.1912ZM58.0279 8.8962H66.0079V10.8342H58.0279V8.8962Z"
+                      fill="white"/>
+            </svg>
+        </div>
+        <div class='footer-text'>
+            Рациональные числа <br>
+            <a href="https://t.me/rationalnumbers">t.me/rationalnumbers</a>
+        </div>
+        <div class="footer-text">
+            Дизайн <a href="https://kmpny.github.io/">kmpny.github.io</a> по данным
+            <a href="https://dataunodc.un.org/crime/intentional-homicide-victims-by-sex">dataunodc.un.org/<br>
+                crime/intentional-homicide-victims-by-sex</a>
+        </div>
+    </footer>
+</div>
+<script src='js/landGrid.js'></script>
+<script  src="js/index.js"></script>
+</body>
+</html>

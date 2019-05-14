@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Mono:400,700');
+
+body {
+    background: white;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 572px;
+    position: relative;
+    background: #C1EDFF;
+}
+
+h1 {
+    font-size: 38px;
+    font-weight: bold;
+    padding: 16px 25px 0;
+    margin-bottom: 22px;
+    margin-top: 0;
+    line-height: 1em;
+}
+
+svg {
+    overflow: visible;
+}
+
+footer {
+    padding: 0 0 21px 26px;
+    display: flex;
+    font-size: 10px;
+    margin-top: -13px;
+    line-height: 1em;
+}
+
+footer > div {
+    margin-right: 15px;
+    align-items: center;
+}
+
+footer .footer-text {
+    opacity: 0.8;
+}
+
+footer > div:first-child {
+    margin-right: 8px;
+}
+
+footer > div:last-child {
+    margin-right: 0;
+}
+
+.calcul {
+    display: flex;
+}
+
+#tooltip {
+    position: absolute;
+    width: fit-content;
+    border-radius: 100px;
+    background: #000000;
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+#tooltip.hidden {
+    display: none;
+}
+
+#tooltip p {
+    color: white;
+    margin: 0;
+    font-size: 10px;
+    line-height: 13px;
+    padding: 4px 9px 5px;
+}
+
+#tooltip .year {
+    opacity: 0.4;
+}
+
+text.legendtext {
+    color: white;
+    font-size: 10px;
+    line-height: 2px;
+}
+
+.boxes {
+    opacity: 0;
+}
+
+.textyear {
+    font-size: 43.6px;
+    font-weight: bold;
+    text-anchor: end;
+}
+
+.total {
+    font-weight: normal;
+    text-anchor: end;
+    line-height: 10px;
+    font-size: 11px;
+}
+
+.circles {
+    opacity: 0.8;
+    fill: #FF5555;
+    transition: all 0.5s ease;
+}
+
+.circlesInterpolate {
+    fill: #A0A0A0;
+}
+
+.rectangle {
+    fill: #A0A0A0;
+    opacity: 0.6;
+}
+
+.rectangle.red {
+    fill: #FF5555;
+    opacity: 0.7;
+}
+
+.label {
+    font-size: 10px;
+}
+
+.legendCircle {
+    stroke: #272F33;
+    fill: none;
+    opacity: 0.3;
+}
+
+.legend text {
+    opacity: 0.8;
+    font-size: 10px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
