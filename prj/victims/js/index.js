@@ -102,6 +102,8 @@ function drawCountryes(countryData) {
             .style("left", xPos + "px")
             .style("top", yPos + "px")
         d3.select("#tooltip .name").text(d.ShortName)
+        d3.select("#tooltip #value").text(d3.format(",.4f")(Math.abs(+d['2000'])/1000)+"%")
+        d3.select("#tooltip .year").text(" в 2000");
 
         d3.select("#tooltip").classed("hidden", false);
     });
@@ -119,25 +121,70 @@ d3.csv("./data/victims.csv").then((data => {
         if (data[i])
             victimsData.push(data[i])
     }
+
     const totalData = [398747, 407240, 408999, 399522, 389694, 380252, 376438, 369625, 377066, 379894, 380328, 389757, 393198, 387727, 389393, 386159, 389223]
     let ix = 0
-    let timer = d3.interval(timerTick, 1000);
+    const delay=1000
+    let timer = d3.interval(timerTick, delay);
 
     drawCountryes(victimsData)
     drawBars(totalData)
     drawLegend()
 
-    function timerTick(tick) {
-        updateData(ix, victimsData)
-        updateBars(ix, totalData)
-        ix++
-        if (ix > 16) {
+    const playButton = d3.select("svg").append("text").attr("class","playbutton").text("❚❚").attr("x",w-rowscale(0.9)).attr("y",colscale(0.75)).attr("fill","black");
+
+    function timerTick() {
+        const check=checkButton()
+
+        if (check=="stop") {
+            timer.stop()
+        }
+        if (ix <= 16 && check=="resume"){
+            updateData(ix, victimsData)
+            updateBars(ix, totalData)
+            ix++
+        }
+        if (ix > 16 && check=="resume") {
             ix = 0
             timer.stop()
-            setTimeout(function () {
-                timer = d3.interval(timerTick, 1000);
-            }, 4000)
+
+            timer = d3.interval(timerTick, delay);
+
         }
+        if (ix >= 16 && check=="stop") {
+            ix = 0
+            timer.stop()
+        }
+    }
+
+    function checkButton(){
+
+        playButton
+            .on("click", function() {
+                const button = d3.select(this)
+
+                if (button.text() == "▶") {
+                    //if (ix==0) {ix=0; timer.stop()}
+                    if (ix > 16) {
+                        ix = 0
+                        timer.stop()
+                        timer = d3.interval(timerTick, delay);
+                    }
+                    else timer = d3.interval(timerTick, delay);
+
+                    button.text("❚❚")
+                        .classed("paused",false);
+
+                } else {
+
+                    timer.stop()
+                    button
+                        .text("▶")
+                        .classed("paused",true);
+                }
+            })
+        let result = (playButton.text()=="▶") ? "stop" : "resume"
+        return result
     }
 }))
 
@@ -161,7 +208,7 @@ function updateData(year, countryData) {
             if (!focus) focus = "RUS"
             let elem = countryData.find(el => el.CountryCode == focus)
 
-            d3.select("#tooltip").select("#value")
+            d3.select("#tooltip #value")
                 .text(d3.format(",.4f")(Math.abs(+elem['20' + year]) / 1000) + "%")
 
             d3.select("#tooltip .year").text(" в 20" + year);
@@ -182,6 +229,7 @@ function updateData(year, countryData) {
             .style("top", yPos + "px")
 
         d3.select("#tooltip .name").text(d.ShortName + ": ")
+        d3.select("#tooltip #value").text(d3.format(",.4f")(Math.abs(+d['20'+year])/1000)+"%")
         d3.select("#tooltip").classed("hidden", false);
     });
     labelboxes.on("mouseout", function () {

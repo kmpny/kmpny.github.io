@@ -148,3 +148,17 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.playbutton{
+    font-size:16px;
+    cursor: pointer;
+    transform: translate(3px, -1px);
+}
+
+.playbutton:hover{
+    opacity: 0.6;
+}
+
+.playbutton.paused{
+    transform: translate(3px, 0px);
+}
