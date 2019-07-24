@@ -1,6 +1,7 @@
 var path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: "./src/index.js",
     output: {
@@ -24,7 +25,7 @@ module.exports = {
                         loader: "css-loader",
                         options: {
                             sourceMap: true,
-                            minimize: true,
+                            //minimize: true,
                             url: false
                         }
                     },
@@ -60,6 +61,13 @@ module.exports = {
         new ExtractTextPlugin({
             filename: 'style.bundle.css',
             allChunks: true,
+        }),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // all options are optional
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
         }),
     ]
 };
