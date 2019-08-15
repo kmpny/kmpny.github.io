@@ -162,13 +162,18 @@ a {
     display: flex;
     flex-direction: row;
     flex: 1;
-    margin-bottom: 12px;
+    flex-wrap: wrap;
     .member{
       display: flex;
       flex-direction: row;
       align-items: center;
-      flex: 0 0 30%;
-      margin-right: 77px;
+      flex: 0 0 33.3%;
+      margin-bottom: 12px;
+      margin-right: 37px;
+      @include until($desktop){
+        flex-grow: 1;
+        margin-right: 0;
+      }
       .img{
         margin-right: 16px;
       }
