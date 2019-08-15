@@ -157,6 +157,34 @@ a {
         transform-origin: 50% 50%;
     }
   }
+
+  .team{
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-bottom: 12px;
+    .member{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex: 0 0 30%;
+      margin-right: 77px;
+      .img{
+        margin-right: 16px;
+      }
+      .text{
+        font-style: normal;
+        font-size: 16px;
+        line-height: 16px;
+        .name{
+          font-weight: bold;
+        }
+        .desc{
+          font-weight: normal;
+        }
+      }
+    }
+  }
 }
 
 .title {
@@ -169,6 +197,29 @@ a {
 
 .page-footer {
   display: flex;
+  flex-direction: column;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 38px;
+  background: black;
+  color: white;
+  padding-top: 64px;
+  padding-bottom: 24px;
+  a{
+    border-color:white ;
+  }
+
+  .cookies{
+    font-family: Ubuntu Mono;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 16px;
+    color: #FFFFFF;
+    opacity: 0.5;
+    padding-top: 45px;
+  }
 
   &.title {
 
