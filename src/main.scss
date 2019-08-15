@@ -211,8 +211,18 @@ a {
   color: white;
   padding-top: 64px;
   padding-bottom: 24px;
+  width: 100%;
   a{
     border-color:white ;
+  }
+
+  .footer-wrapper{
+    margin: 0 auto;
+    max-width: 1152px;
+    width: 100%;
+  }
+  .emailus{
+    padding: 0 32px;
   }
 
   .cookies{
@@ -223,7 +233,7 @@ a {
     line-height: 16px;
     color: #FFFFFF;
     opacity: 0.5;
-    padding-top: 45px;
+    padding: 45px  32px 0 32px;
   }
 
   &.title {
