@@ -42,7 +42,7 @@ a {
 .page-header {
   display: flex;
   margin-top: 32px;
-  margin-bottom: 64px;
+  margin-bottom: 32px;
   justify-content: space-between;
   font-size: 16px;
   @include until($tablet) {
@@ -163,6 +163,7 @@ a {
     flex-direction: row;
     flex: 1;
     flex-wrap: wrap;
+		margin-top: 32px;
     .member{
       display: flex;
       flex-direction: row;
