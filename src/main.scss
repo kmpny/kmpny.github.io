@@ -39,50 +39,81 @@ a {
   }
 }
 
-.page-header {
-  display: flex;
-  margin-top: 32px;
+
+header {
+  margin-top: 35px;
   margin-bottom: 32px;
-  justify-content: space-between;
-  font-size: 16px;
-  @include until($tablet) {
-    flex-direction: column;
-    margin-bottom: 0px;
-  }
 
-  p {
-    margin-top: 0em;
-  }
-
-	#canvas-wrapper {
-		border-radius: 0px;
-		overflow: hidden;
-		width: 48px;
-		height: 48px;
-		margin-top: -4px;
-	}
-
-  .introduction {
-    margin-left: 18px;
-    margin-top: -0.25em;
-		br {
-      @include until($tablet) {
-        display: none;
-      }
-		}
-  }
-
-  .left {
+  .logo {
     display: flex;
-		#canvas-wrapper {
-			flex-shrink: 0
-		}
+    flex-direction: row;
+    align-items: baseline;
+
+    b {
+      margin-left: 4px;
+      font-size: 40px;
+    }
   }
 
-  .right {
-    margin-top: -0.25em;
+  .page-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+    font-size: 16px;
     @include until($tablet) {
-      margin-left: 66px;
+      flex-direction: column;
+      margin-bottom: 0px;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+
+      #canvas-wrapper {
+        border-radius: 0px;
+        overflow: hidden;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0
+      }
+
+
+      .introduction {
+        p {
+          margin-top: 9px;
+        }
+
+        br {
+          @include until($tablet) {
+            display: none;
+          }
+        }
+      }
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      width: fit-content;
+
+      .email {
+        margin: -5px 0.5em 0;
+
+      }
+
+      .icons {
+        a {
+          border-bottom: none;
+        }
+      }
+
+      @include until($tablet) {
+        margin-top: 0;
+        flex-direction: row-reverse;
+
+      }
+
     }
   }
 }
@@ -101,10 +132,12 @@ a {
     cursor: pointer;
     transition: all 0.1s ease;
     //@include until($desktop) {
-      //margin-bottom: 80px;
+    //margin-bottom: 80px;
     //}
 
-    div{margin-top: 10px}
+    div {
+      margin-top: 10px
+    }
 
 
     h2 {
@@ -151,41 +184,47 @@ a {
         }
       }
     }
-    &:hover{
+
+    &:hover {
       opacity: 0.7;
-        //transform: scale(1.05);
-        transform-origin: 50% 50%;
+      //transform: scale(1.05);
+      transform-origin: 50% 50%;
     }
   }
 
-  .team{
+  .team {
     display: flex;
     flex-direction: row;
     flex: 1;
     flex-wrap: wrap;
-		margin-top: 32px;
-    .member{
+    margin-top: 32px;
+
+    .member {
       display: flex;
       flex-direction: row;
       align-items: center;
       flex: 0 0 33.3%;
       margin-bottom: 12px;
       margin-right: 37px;
-      @include until($desktop){
+      @include until($desktop) {
         flex-grow: 1;
         margin-right: 0;
       }
-      .img{
+
+      .img {
         margin-right: 16px;
       }
-      .text{
+
+      .text {
         font-style: normal;
         font-size: 16px;
         line-height: 16px;
-        .name{
+
+        .name {
           font-weight: bold;
         }
-        .desc{
+
+        .desc {
           font-weight: normal;
         }
       }
@@ -213,20 +252,22 @@ a {
   padding-top: 64px;
   padding-bottom: 24px;
   width: 100%;
-  a{
-    border-color:white ;
+
+  a {
+    border-color: white;
   }
 
-  .footer-wrapper{
+  .footer-wrapper {
     margin: 0 auto;
     max-width: 1152px;
     width: 100%;
   }
-  .emailus{
+
+  .emailus {
     padding: 0 32px;
   }
 
-  .cookies{
+  .cookies {
     font-family: Ubuntu Mono;
     font-style: normal;
     font-weight: normal;
@@ -234,7 +275,7 @@ a {
     line-height: 16px;
     color: #FFFFFF;
     opacity: 0.5;
-    padding: 45px  32px 0 32px;
+    padding: 45px 32px 0 32px;
   }
 
   &.title {

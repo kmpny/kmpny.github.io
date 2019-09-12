@@ -14,7 +14,7 @@ ready(function () {
 
     const sketch = (p) => {
         p.setup = () => {
-            var canvas = p.createCanvas(48, 48)
+            var canvas = p.createCanvas(24, 24)
             canvas.parent('canvas-wrapper')
             p.noStroke()
             p.noiseDetail(1)
