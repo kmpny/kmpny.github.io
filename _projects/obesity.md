@@ -2,7 +2,7 @@
 title: The animated map of obesity
 id: neuroji
 size: s
-weight: 100
+weight: 30
 redirect: img/obesity.mp4
 ---
 
