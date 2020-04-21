@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700");
 body {
   padding: 0;
   margin: 0;
@@ -6,7 +6,8 @@ body {
   flex-direction: column;
   align-items: center;
   background: #fff;
-  font-family: 'IBM Plex Mono', monospace; }
+  font-family: 'Ubuntu Mono', monospace;
+  font-weight: 200; }
 
 a {
   color: inherit;
