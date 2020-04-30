@@ -33,11 +33,11 @@ a {
 header {
   margin-top: 35px;
   margin-bottom: 32px; }
-  header .logo {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline; }
-    header .logo b {
+  header .logo a {
+    text-decoration: none; }
+    header .logo a #canvas-wrapper {
+      display: inline-block; }
+    header .logo a b {
       margin-left: 4px;
       font-size: 40px; }
   header .page-header {
@@ -188,3 +188,10 @@ header {
     color: #FFFFFF;
     opacity: 0.5;
     padding: 45px 32px 0 32px; }
+
+.layout-project .roles {
+  background: #eee;
+  max-width: 512px;
+  padding: 0.5em 2em; }
+.layout-project img {
+  max-width: 100%; }

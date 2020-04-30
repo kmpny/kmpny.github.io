@@ -47,11 +47,11 @@ header {
   margin-top: 35px;
   margin-bottom: 32px;
 
-  .logo {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-
+  .logo a {
+    text-decoration: none;
+    #canvas-wrapper {
+      display: inline-block;
+    }
     b {
       margin-left: 4px;
       font-size: 40px;
