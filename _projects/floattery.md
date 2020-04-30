@@ -13,7 +13,7 @@ Floattery takes any name and — FLOP! Makes a unique fishing float out of it. F
 <video width="1441" style="max-width: 100%;" loop="" autoplay=""><source src="/img/floattery.mp4" type="video/mp4"></video>
 
 
-The floats are assembled from pre-drawn sections. Not in any way, but according to the rules described in the [generating grammar](https://en.wikipedia.org/wiki/Generative_grammar). It defines possible combinations of float parts: what types of sections they contain and in what order they go.
+The floats are assembled from pre-drawn sections. Not in any way, but according to the rules described in the [generative grammar](https://en.wikipedia.org/wiki/Generative_grammar). It defines possible combinations of float parts: what types of sections they contain and in what order they go.
 
 The sequence is a random, but the randomness depends on the content of the text field. The same values will draw the same floats.
 
